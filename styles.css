@@ -50,6 +50,9 @@ html, body {
   transform: translateY(24px);
   transition: opacity var(--transition), transform var(--transition);
   z-index: 1;
+  /* Allow internal scroll on very small screens */
+  overflow-y: auto;
+  padding: 1rem 0;
 }
 
 .step.active {
@@ -186,7 +189,8 @@ html, body {
 
 .petal-ring {
   position: absolute;
-  width: 380px; height: 380px;
+  width: clamp(220px, 60vw, 380px);
+  height: clamp(220px, 60vw, 380px);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -203,7 +207,7 @@ html, body {
 
 .urdu-sub {
   font-family: var(--font-urdu);
-  font-size: 1.1rem;
+  font-size: clamp(0.85rem, 2.5vw, 1.1rem);
   color: var(--ink-muted);
   direction: rtl;
   animation: fadeUp 1.2s ease both;
@@ -217,7 +221,7 @@ html, body {
 
 .name-display {
   font-family: var(--font-urdu);
-  font-size: clamp(4rem, 12vw, 7rem);
+  font-size: clamp(3rem, 12vw, 7rem);
   font-weight: 300;
   font-style: italic;
   color: var(--ink);
@@ -229,7 +233,7 @@ html, body {
 
 .cover-tagline {
   font-family: var(--font-urdu);
-  font-size: 0.95rem;
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -255,7 +259,7 @@ html, body {
 
 .letter-body {
   font-family: var(--font-serif);
-  font-size: 1.18rem;
+  font-size: clamp(1rem, 2.5vw, 1.18rem);
   font-weight: 300;
   line-height: 1.85;
   color: var(--ink-soft);
@@ -266,7 +270,7 @@ html, body {
 
 .salutation {
   font-style: italic;
-  font-size: 1.4rem;
+  font-size: clamp(1.15rem, 3vw, 1.4rem);
   color: var(--ink);
 }
 
@@ -283,7 +287,7 @@ html, body {
 
 .poem-body {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: clamp(1.05rem, 3vw, 1.25rem);
   font-weight: 300;
   font-style: italic;
   line-height: 1.9;
@@ -295,7 +299,7 @@ html, body {
 .urdu-poem {
   font-family: var(--font-urdu);
   font-style: normal;
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 3.5vw, 1.4rem);
   direction: rtl;
   color: var(--rose);
 }
@@ -327,7 +331,7 @@ html, body {
 
 .promise-item p {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   font-weight: 300;
   line-height: 1.8;
   color: var(--ink-soft);
@@ -337,7 +341,7 @@ html, body {
   font-family: var(--font-urdu) !important;
   direction: rtl;
   text-align: right;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   line-height: 2.2;
 }
 
@@ -352,7 +356,7 @@ html, body {
   min-height: 70vh;
 }
 
-/* Floating photos */
+/* ── Floating photos ── */
 .float-photo {
   position: fixed;
   border-radius: 3px;
@@ -372,7 +376,6 @@ html, body {
 .float-photo:hover { transform: scale(1.03) rotate(0deg) !important; }
 .float-photo:hover img { filter: sepia(0%) contrast(1); }
 
-/* Photo missing state (placeholder) */
 .float-photo.photo-missing {
   background: var(--cream-mid);
   border: 1px dashed var(--border);
@@ -393,14 +396,16 @@ html, body {
 
 /* Left photos */
 .fp-1 {
-  width: 160px; height: 210px;
+  width: clamp(100px, 12vw, 160px);
+  height: clamp(130px, 16vw, 210px);
   left: clamp(8px, 3vw, 60px);
   top: 50%;
   transform: translateY(-70%) rotate(-4deg);
   animation: floatA 6s ease-in-out infinite;
 }
 .fp-2 {
-  width: 130px; height: 170px;
+  width: clamp(85px, 10vw, 130px);
+  height: clamp(110px, 13vw, 170px);
   left: clamp(8px, 6vw, 120px);
   top: 50%;
   transform: translateY(10%) rotate(3deg);
@@ -409,25 +414,33 @@ html, body {
 
 /* Right photos */
 .fp-3 {
-  width: 150px; height: 195px;
+  width: clamp(95px, 11vw, 150px);
+  height: clamp(125px, 15vw, 195px);
   right: clamp(8px, 3vw, 60px);
   top: 50%;
   transform: translateY(-65%) rotate(5deg);
   animation: floatB 6.5s ease-in-out infinite;
 }
 .fp-4 {
-  width: 120px; height: 155px;
+  width: clamp(80px, 9vw, 120px);
+  height: clamp(105px, 12vw, 155px);
   right: clamp(8px, 7vw, 140px);
   top: 50%;
   transform: translateY(5%) rotate(-3deg);
   animation: floatA 8s ease-in-out infinite;
 }
 .fp-5 {
-  width: 110px; height: 140px;
+  width: clamp(75px, 8vw, 110px);
+  height: clamp(95px, 11vw, 140px);
   right: clamp(8px, 2vw, 30px);
   top: 50%;
   transform: translateY(55%) rotate(2deg);
   animation: floatC 7.5s ease-in-out infinite;
+}
+
+/* Hide photos when they'd overlap the envelope on medium viewports */
+@media (max-width: 900px) {
+  .fp-2, .fp-4, .fp-5 { display: none; }
 }
 
 @keyframes floatA {
@@ -443,61 +456,60 @@ html, body {
   50% { margin-top: -7px; }
 }
 
-/* Envelope scene — outer wrapper handles vertical stacking */
+/* ── Envelope scene ── */
 .envelope-scene {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
   z-index: 5;
-  /* tall enough so the rising card has room above the envelope */
-  padding-top: 220px;
+  padding-top: clamp(140px, 30vw, 220px);
 }
 
-/* The envelope + card share a single relative container */
+/* Envelope + card container — sizes scale with viewport */
 .envelope-wrap {
   position: relative;
-  width: 300px;
-  /* height = card-height(230px) + gap(16px) + envelope(180px) */
-  height: 426px;
+  width: clamp(220px, 60vw, 300px);
+  /* height = card-height + gap(16px) + envelope-height */
+  height: clamp(330px, 85vw, 426px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end; /* envelope sits at the bottom */
+  justify-content: flex-end;
 }
 
-/* Card lives above the envelope, starts hidden inside */
+/* Card */
 .env-card {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(196px); /* sits inside envelope */
-  width: 240px;
-  min-height: 230px;
+  /* sits "inside" the envelope initially; value = (wrap-height - card-height) ≈ 196px base */
+  transform: translateX(-50%) translateY(196px);
+  width: clamp(175px, 48vw, 240px);
+  min-height: clamp(170px, 45vw, 230px);
   background: white;
   border-radius: 2px;
-  padding: 1.8rem 1.5rem;
+  padding: clamp(1.2rem, 3vw, 1.8rem) clamp(1rem, 2.5vw, 1.5rem);
   text-align: center;
-  z-index: 1; /* behind flap initially */
+  z-index: 1;
   opacity: 0;
   transition: transform 0.75s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.35s ease 0.25s, z-index 0s 0s;
   box-shadow: 0 8px 32px var(--shadow);
 }
 
-/* Once opened: card rises cleanly above the envelope */
 .envelope-wrap.opened .env-card {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
-  z-index: 6; /* above flap once open */
+  z-index: 6;
   transition: transform 0.75s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.35s ease 0.25s, z-index 0s 0.3s;
 }
 
-/* Envelope box — sits at bottom of .envelope-wrap */
+/* Envelope box */
 .envelope {
   position: absolute;
   bottom: 0;
-  width: 300px;
-  height: 180px;
+  width: clamp(220px, 60vw, 300px);
+  height: clamp(135px, 35vw, 180px);
   cursor: pointer;
   transition: transform 0.3s;
   z-index: 4;
@@ -518,39 +530,40 @@ html, body {
   justify-content: center;
 }
 
-/* V-fold bottom */
+/* V-fold bottom — triangle widths = envelope-width / 2 */
 .env-body::before {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 0;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-bottom: 95px solid rgba(180, 148, 90, 0.13);
+  border-left: calc(clamp(220px, 60vw, 300px) / 2) solid transparent;
+  border-right: calc(clamp(220px, 60vw, 300px) / 2) solid transparent;
+  border-bottom: clamp(60px, 16vw, 95px) solid rgba(180, 148, 90, 0.13);
 }
 
-/* Flap — folds backward on open */
+/* Flap */
 .env-flap {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 0;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-top: 100px solid #ede3cc;
+  border-left: calc(clamp(220px, 60vw, 300px) / 2) solid transparent;
+  border-right: calc(clamp(220px, 60vw, 300px) / 2) solid transparent;
+  border-top: clamp(75px, 20vw, 100px) solid #ede3cc;
   transform-origin: top center;
   transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 5;
-  /* subtle darker edge on flap */
   filter: drop-shadow(0 3px 6px rgba(60,40,15,0.10));
 }
 .env-flap::after {
   content: '';
   position: absolute;
-  top: -100px; left: -150px; right: -150px;
+  top: calc(-1 * clamp(75px, 20vw, 100px));
+  left: calc(-1 * clamp(220px, 60vw, 300px) / 2);
+  right: calc(-1 * clamp(220px, 60vw, 300px) / 2);
   height: 0;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-top: 100px solid rgba(160, 130, 80, 0.22);
+  border-left: calc(clamp(220px, 60vw, 300px) / 2) solid transparent;
+  border-right: calc(clamp(220px, 60vw, 300px) / 2) solid transparent;
+  border-top: clamp(75px, 20vw, 100px) solid rgba(160, 130, 80, 0.22);
 }
 
 .envelope-wrap.opened .env-flap {
@@ -559,14 +572,15 @@ html, body {
 
 /* Wax seal */
 .env-seal {
-  width: 44px; height: 44px;
+  width: clamp(36px, 7vw, 44px);
+  height: clamp(36px, 7vw, 44px);
   border-radius: 50%;
   background: var(--rose);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-style: italic;
   color: var(--cream);
   position: relative;
@@ -581,14 +595,14 @@ html, body {
 
 .card-wish {
   font-family: var(--font-serif);
-  font-size: 0.88rem;
+  font-size: clamp(0.75rem, 2vw, 0.88rem);
   font-style: italic;
   color: var(--ink-muted);
   margin-bottom: 0.3rem;
 }
 .card-name {
   font-family: var(--font-urdu);
-  font-size: 1.9rem;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
   font-weight: 300;
   font-style: italic;
   color: var(--ink);
@@ -596,14 +610,14 @@ html, body {
 }
 .card-msg {
   font-family: var(--font-urdu);
-  font-size: 0.88rem;
+  font-size: clamp(0.75rem, 2vw, 0.88rem);
   line-height: 1.75;
   color: var(--ink-soft);
   margin-bottom: 0.9rem;
 }
 .card-dua {
   font-family: var(--font-urdu);
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--rose);
   direction: rtl;
 }
@@ -625,7 +639,7 @@ html, body {
 
 .reply-heading {
   font-family: var(--font-urdu);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 300;
   font-style: italic;
   color: var(--ink);
@@ -634,7 +648,7 @@ html, body {
 
 .reply-sub {
   font-family: var(--font-urdu);
-  font-size: 0.85rem;
+  font-size: clamp(0.78rem, 2vw, 0.85rem);
   color: var(--ink-muted);
   line-height: 1.7;
   margin-bottom: 1.8rem;
@@ -648,7 +662,7 @@ html, body {
 
 textarea {
   font-family: var(--font-urdu);
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
   font-weight: 300;
   color: var(--ink-soft);
   background: var(--cream-mid);
@@ -674,7 +688,7 @@ textarea::placeholder { color: var(--ink-muted); }
 
 .success-urdu {
   font-family: var(--font-urdu);
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
   color: var(--rose);
   direction: rtl;
   margin-top: 0.3rem;
@@ -698,7 +712,7 @@ textarea::placeholder { color: var(--ink-muted); }
 
 .success-msg {
   font-family: var(--font-urdu);
-  font-size: 1.3rem;
+  font-size: clamp(1.05rem, 3vw, 1.3rem);
   font-style: italic;
   color: var(--ink);
 }
@@ -722,28 +736,120 @@ textarea::placeholder { color: var(--ink-muted); }
 }
 
 /* ─── Responsive ────────────────────────────────────────────── */
+
+/* Tablets: 601px–900px */
+@media (min-width: 601px) and (max-width: 900px) {
+  .letter-wrap, .reply-wrap { padding-left: 1.5rem; }
+  .step-label { margin-bottom: 1.5rem; }
+  .promise-lines { gap: 1.4rem; }
+}
+
+/* Mobile: ≤600px */
 @media (max-width: 600px) {
   .float-photo { display: none; }
 
-  .envelope { width: 240px; height: 155px; }
+  .step {
+    justify-content: flex-start;
+    padding-top: 3rem;
+    padding-bottom: 5rem; /* room for progress dots */
+  }
+
+  /* Cover stays centered */
+  #step-1 { justify-content: center; padding-top: 1rem; }
+
+  .cover-inner { min-height: 60vh; }
+
+  .nav-row { margin-top: 1.8rem; }
+
+  .step-label { margin-bottom: 1.2rem; }
+
+  .letter-wrap { padding-left: 1rem; }
+  .reply-wrap  { padding-left: 1rem; }
+
+  .letter-body { font-size: 1rem; line-height: 1.75; }
+  .poem-body   { font-size: 1.05rem; }
+  .promise-item p { font-size: 0.95rem; }
+  .promise-lines { gap: 1.2rem; }
+
+  /* Envelope: keep proportions, just smaller */
+  .envelope-scene { padding-top: 120px; }
+
+  .envelope-wrap {
+    width: 220px;
+    height: 340px;
+  }
+
+  .envelope {
+    width: 220px;
+    height: 135px;
+  }
+
   .env-flap {
-    border-left-width: 121px;
-    border-right-width: 121px;
-    border-top-width: 82px;
+    border-left-width: 110px;
+    border-right-width: 110px;
+    border-top-width: 78px;
   }
   .env-flap::after {
-    border-left-width: 121px;
-    border-right-width: 121px;
-    top: -82px; left: -121px; right: -121px;
+    border-left-width: 110px;
+    border-right-width: 110px;
+    top: -78px; left: -110px; right: -110px;
+    border-top-width: 78px;
   }
   .env-body::before {
-    border-left-width: 120px;
-    border-right-width: 120px;
+    border-left-width: 110px;
+    border-right-width: 110px;
+    border-bottom-width: 65px;
   }
-  .env-card { width: 200px; }
-  .envelope.opened .env-card { transform: translateX(-50%) translateY(-150px); }
 
-  .letter-body { font-size: 1.05rem; }
-  .poem-body { font-size: 1.1rem; }
-  .promise-item p { font-size: 1rem; }
+  .env-card {
+    width: 185px;
+    min-height: 175px;
+    transform: translateX(-50%) translateY(165px);
+  }
+  .envelope-wrap.opened .env-card {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .reply-sub { margin-bottom: 1.2rem; }
+}
+
+/* Very small phones: ≤380px */
+@media (max-width: 380px) {
+  .name-display { font-size: 2.8rem; }
+
+  .envelope-wrap {
+    width: 200px;
+    height: 310px;
+  }
+  .envelope { width: 200px; height: 120px; }
+
+  .env-flap {
+    border-left-width: 100px;
+    border-right-width: 100px;
+    border-top-width: 70px;
+  }
+  .env-flap::after {
+    border-left-width: 100px;
+    border-right-width: 100px;
+    top: -70px; left: -100px; right: -100px;
+    border-top-width: 70px;
+  }
+  .env-body::before {
+    border-left-width: 100px;
+    border-right-width: 100px;
+    border-bottom-width: 58px;
+  }
+
+  .env-card {
+    width: 168px;
+    min-height: 158px;
+    transform: translateX(-50%) translateY(152px);
+  }
+}
+
+/* Large screens: >1400px */
+@media (min-width: 1400px) {
+  .page-inner { width: 720px; }
+  .letter-body { font-size: 1.22rem; }
+  .poem-body   { font-size: 1.3rem; }
 }

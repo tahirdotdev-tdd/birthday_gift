@@ -624,7 +624,7 @@ html, body {
 .reply-wrap { padding-left: 2rem; border-left: 1px solid var(--border); }
 
 .reply-heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-urdu);
   font-size: 2rem;
   font-weight: 300;
   font-style: italic;
@@ -633,7 +633,7 @@ html, body {
 }
 
 .reply-sub {
-  font-family: var(--font-sans);
+  font-family: var(--font-urdu);
   font-size: 0.85rem;
   color: var(--ink-muted);
   line-height: 1.7;
@@ -647,7 +647,7 @@ html, body {
 }
 
 textarea {
-  font-family: var(--font-serif);
+  font-family: var(--font-urdu);
   font-size: 1.05rem;
   font-weight: 300;
   color: var(--ink-soft);
@@ -666,7 +666,7 @@ textarea:focus { border-color: var(--rose-soft); }
 textarea::placeholder { color: var(--ink-muted); }
 
 .char-count {
-  font-family: var(--font-sans);
+  font-family: var(--font-urdu);
   font-size: 0.72rem;
   color: var(--ink-muted);
   text-align: right;
@@ -697,14 +697,14 @@ textarea::placeholder { color: var(--ink-muted); }
 }
 
 .success-msg {
-  font-family: var(--font-serif);
+  font-family: var(--font-urdu);
   font-size: 1.3rem;
   font-style: italic;
   color: var(--ink);
 }
 
 .success-sub {
-  font-family: var(--font-sans);
+  font-family: var(--font-urdu);
   font-size: 0.8rem;
   letter-spacing: 0.1em;
   color: var(--ink-muted);

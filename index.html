@@ -164,37 +164,36 @@
   </section>
 
   <!-- Step 6: Her Reply — her gift back to you -->
-  <section class="step" id="step-6">
-    <div class="page-inner reply-page">
-      <div class="reply-wrap">
-        <h2 class="reply-heading">Now it's your turn.</h2>
-        <p class="reply-sub">You can give something back — a word, a sentence, whatever you're carrying right now. Only Tahir will read it.</p>
+<section class="step" id="step-6">
+  <div class="page-inner reply-page">
+    <div class="reply-wrap">
+      <p class="reply-sub">تم بھی کچھ واپس دے سکتی ہو — ایک لفظ، ایک جملہ، یا جو بھی اس وقت دل میں ہے۔ بس طاہر ہی اسے پڑھے گا۔</p>
 
-        <div class="reply-form" id="reply-form">
-          <textarea
-            id="reply-text"
-            placeholder="Yahan likhein..."
-            maxlength="500"
-          ></textarea>
-          <div class="char-count"><span id="char-num">0</span> / 500</div>
+      <div class="reply-form" id="reply-form">
+        <textarea
+          id="reply-text"
+          placeholder="یہاں لکھو..."
+          maxlength="500"
+        ></textarea>
+        <div class="char-count"><span id="char-num">0</span> / 500</div>
 
-          <button class="btn-primary" id="send-btn" onclick="App.sendReply()">
-            Seal &amp; Send to Tahir
-          </button>
-        </div>
-
-        <div class="reply-success" id="reply-success" style="display:none;">
-          <div class="success-icon">✦</div>
-          <p class="success-msg">Your gift has been sealed.</p>
-          <p class="success-sub">Tahir will find it.</p>
-          <p class="success-urdu">جزاک اللہ</p>
-        </div>
+        <button class="btn-primary" id="send-btn" onclick="App.sendReply()">
+          مہر لگا کر طاہر کو بھیجو
+        </button>
       </div>
-      <div class="nav-row">
-        <button class="btn-text" onclick="App.prev()">← Back</button>
+
+      <div class="reply-success" id="reply-success" style="display:none;">
+        <div class="success-icon">✦</div>
+        <p class="success-msg">تمہارا تحفہ محفوظ ہو گیا ہے۔</p>
+        <p class="success-sub">طاہر اسے ڈھونڈ لے گا۔</p>
+        <p class="success-urdu">جزاک اللہ</p>
       </div>
     </div>
-  </section>
+    <div class="nav-row">
+      <button class="btn-text" onclick="App.prev()">← واپس</button>
+    </div>
+  </div>
+</section>
 
   <!-- Progress dots -->
   <div class="progress-dots" id="progress-dots">

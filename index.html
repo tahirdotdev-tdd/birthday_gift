@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Maryam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400&family=Noto+Nastaliq+Urdu:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Ambient particles -->
+  <canvas id="particles"></canvas>
+
+  <!-- Step 1: Cover -->
+  <section class="step active" id="step-1">
+    <div class="cover-inner">
+      <div class="petal-ring" id="petal-ring"></div>
+      <div class="cover-text">
+        <p class="urdu-sub">تمہارے لیےایک تحفہ</p>
+        <h1 class="name-display">مریم</h1>
+        <div></div>
+        <div></div>
+        <div></div>
+        <p class="cover-tagline">میری سالگرہ کے موقع پر مجھے معلوم تھا کہ تم ضرور کچھ لے کر آؤ گی۔</p>
+        <button class="btn-ghost" onclick="App.next()">Open <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 2: Letter -->
+  <section class="step" id="step-2">
+    <div class="page-inner letter-page">
+      <div class="letter-wrap">
+        <p class="step-label">A letter</p>
+        <div class="letter-body">
+          <p class="salutation">Maryam,</p>
+          <p class="urdu-letter">کچھ باتیں ایسی تھیں جو میں بہت عرصے سے کہنا چاہتا تھا — ایسی باتیں جو ایک گفتگو کے لیے شاید بہت بھاری تھیں، یا شاید اتنی خاموش کہ لفظوں میں ڈھل ہی نہ سکیں۔ اس لیے میں نے انہیں لکھ لیا، بالکل ویسے جیسے لوگ پہلے کیا کرتے تھے، جب الفاظ اتنے قیمتی ہوتے تھے کہ انہیں محفوظ رکھا جاتا تھا۔</p>
+          <p class="urdu-letter">تم میں ایک خاص انداز ہے جس سے تم عام لمحوں کو بھی معنی خیز بنا دیتی ہو۔ دن کے بیچ میں ایک پیغام۔ ایک خاموشی جو پھر بھی کچھ کہہ جاتی ہے۔ میں یہ سب محسوس کرتا ہوں، چاہے میں کہوں یا نہ کہوں۔ بلکہ خاص طور پر تب، جب میں کچھ نہیں کہتا۔</p>
+          <p class="urdu-letter">میں ابھی خود کو سنوارنے کے عمل میں ہوں — اپنی ڈگری، اپنا کام، اور وہ شخصیت جو میں بننا چاہتا ہوں، تاکہ ایک دن تمہارے پاس ٹھیک طریقے سے، صحیح راستوں سے، اور صحیح وقت پر آ سکوں۔ مگر اس تمام انتظار کے درمیان بھی ایک سکون ہے… یہ جاننے میں کہ تم موجود ہو۔ جیسے کوئی ثابت نقطہ، جو کبھی بدلتا نہیں۔</p>
+          <p class="urdu-letter">تو آج، میری سالگرہ کے دن، میں چاہتا تھا کہ تمہارے پاس کچھ ایسا ہو جو صرف تمہارا ہو — نہ کوئی عام سا پیغام، نہ ہی ایک جلدی میں بھیجا گیا متن… بلکہ کچھ ایسا، جو آہستہ آہستہ، پوری توجہ اور محبت کے ساتھ تیار کیا گیا ہو۔</p>
+          <p class="letter-close">With all of it,<br/><em>Tahir</em></p>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button class="btn-text" onclick="App.prev()">← Back</button>
+        <button class="btn-ghost" onclick="App.next()">Next <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 3: Poem -->
+  <section class="step" id="step-3">
+    <div class="page-inner poem-page">
+      <div class="poem-wrap">
+        <p class="step-label">A poem — for you</p>
+        <div class="poem-body">
+          <p class="poem-line urdu-poem">ایک قسم کا صبر ہے</p>
+          <p class="poem-line urdu-poem">جو انتظار کی طرح محسوس نہیں ہوتا —</p>
+          <p class="poem-line urdu-poem">وہ سمت کی طرح محسوس ہوتا ہے۔</p>
+          <br/>
+          <p class="poem-line urdu-poem">تم ہو تو راستہ بھی ہے</p>
+          <p class="poem-line urdu-poem">منزل بھی ہے، سبب بھی ہے</p>
+          <br/>
+          <p class="poem-line urdu-poem">میں نے تمہاری خاموشیاں سیکھی ہیں</p>
+          <p class="poem-line urdu-poem">جیسے کوئی زبان سیکھتا ہے —</p>
+          <p class="poem-line urdu-poem">آہستہ آہستہ، پھر ایک ساتھ۔</p>
+          <br/>
+          <p class="poem-line urdu-poem">اور میں ابھی سیکھ رہا ہوں۔</p>
+          <p class="poem-line urdu-poem">یہ وہ حصہ ہے جسے میں سب سے زیادہ پیار کرتا ہوں۔</p>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button class="btn-text" onclick="App.prev()">← Back</button>
+        <button class="btn-ghost" onclick="App.next()">Next <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 4: A Promise -->
+  <section class="step" id="step-4">
+    <div class="page-inner promise-page">
+      <div class="promise-wrap">
+        <p class="step-label">ایک وعدہ</p>
+        <div class="promise-lines">
+          <div class="promise-item">
+            <span class="promise-num">01</span>
+            <p class="urdu-promise">میں تمہارے پاس ٹھیک طریقے سے آؤں گا — صحیح لوگوں کے ذریعے، صحیح طریقے سے، صحیح وقت پر۔ یہ کوئی شاید نہیں ہے۔</p>
+          </div>
+          <div class="promise-item">
+            <span class="promise-num">02</span>
+            <p class="urdu-promise">اس وقت تک، میں تعمیر کرتا رہوں گا — تاکہ جب میں پہنچوں، تو کچھ حقیقی کے ساتھ پہنچوں۔</p>
+          </div>
+          <div class="promise-item">
+            <span class="promise-num">03</span>
+            <p class="urdu-promise">میں کبھی یہ بات فراموش نہیں کروں گا کہ تم اتنی صابر ہو کہ میرے ساتھ اس درمیان میں موجود رہو۔</p>
+          </div>
+        </div>
+        <p class="urdu-promise">انشاءاللہ</p>
+      </div>
+      <div class="nav-row">
+        <button class="btn-text" onclick="App.prev()">← Back</button>
+        <button class="btn-ghost" onclick="App.next()">Open your gift <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 5: Envelope -->
+  <section class="step" id="step-5">
+    <div class="page-inner envelope-page">
+
+      <!-- Floating photos — LEFT side -->
+      <!-- PHOTO SLOT 1: Replace 'images/photo1.jpg' with your actual image path -->
+      <div class="float-photo fp-1">
+        <img src="photos/photo-1.png" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+      </div>
+      <!-- PHOTO SLOT 2: Replace 'images/photo2.jpg' with your actual image path -->
+      <div class="float-photo fp-2">
+        <img src="photos/photo-2.jpg" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+      </div>
+
+      <!-- Envelope center -->
+      <div class="envelope-scene">
+        <div class="envelope-wrap" id="envelope-wrap">
+          <!-- Card rises out from inside -->
+          <div class="env-card" id="env-card">
+            <p class="card-wish">Happy Birthday to Me</p>
+            <p class="card-name">مریم</p>
+            <p class="card-msg">یہ سال ہم دونوں کے لیے وہ سب کچھ لے کر آئے جس کے ہم حق دار ہیں — اور وہ سب بھی جس کی ہم نے خاموشی سے امید رکھی ہے۔ تم ایسی ہستی ہو جس کا ہر دن جشن منانے کے قابل ہے۔ اللہ تعالیٰ تمہاری اور میری تمام دعائیں قبول فرمائے۔</p>
+            <p class="card-dua">آمین</p>
+          </div>
+          <!-- Envelope body + flap -->
+          <div class="envelope" id="envelope" onclick="App.openEnvelope()">
+            <div class="env-flap" id="env-flap"></div>
+            <div class="env-body">
+              <div class="env-seal" id="env-seal"><span>M</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="env-hint" id="env-hint">Click the envelope to open</p>
+      </div>
+
+      <!-- Floating photos — RIGHT side -->
+      <!-- PHOTO SLOT 3: Replace 'images/photo3.jpg' with your actual image path -->
+      <div class="float-photo fp-3">
+        <img src="photos/photo-3.jpg" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+      </div>
+      <!-- PHOTO SLOT 4: Replace 'images/photo4.jpg' with your actual image path -->
+      <div class="float-photo fp-4">
+        <img src="photos/photo-4.png" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+      </div>
+      <!-- PHOTO SLOT 5: Replace 'images/photo5.jpg' with your actual image path -->
+      <div class="float-photo fp-5">
+        <img src="photos/photo-5.png" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+      </div>
+
+    </div>
+    <div class="nav-row envelope-nav">
+      <button class="btn-text" onclick="App.prev()">← Back</button>
+      <button class="btn-ghost" id="reply-btn" style="display:none;" onclick="App.next()">Write back <span class="arrow">→</span></button>
+    </div>
+  </section>
+
+  <!-- Step 6: Her Reply — her gift back to you -->
+  <section class="step" id="step-6">
+    <div class="page-inner reply-page">
+      <div class="reply-wrap">
+        <h2 class="reply-heading">Now it's your turn.</h2>
+        <p class="reply-sub">You can give something back — a word, a sentence, whatever you're carrying right now. Only Tahir will read it.</p>
+
+        <div class="reply-form" id="reply-form">
+          <textarea
+            id="reply-text"
+            placeholder="Yahan likhein..."
+            maxlength="500"
+          ></textarea>
+          <div class="char-count"><span id="char-num">0</span> / 500</div>
+
+          <button class="btn-primary" id="send-btn" onclick="App.sendReply()">
+            Seal &amp; Send to Tahir
+          </button>
+        </div>
+
+        <div class="reply-success" id="reply-success" style="display:none;">
+          <div class="success-icon">✦</div>
+          <p class="success-msg">Your gift has been sealed.</p>
+          <p class="success-sub">Tahir will find it.</p>
+          <p class="success-urdu">جزاک اللہ</p>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button class="btn-text" onclick="App.prev()">← Back</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress dots -->
+  <div class="progress-dots" id="progress-dots">
+    <span class="dot active" onclick="App.goTo(1)"></span>
+    <span class="dot" onclick="App.goTo(2)"></span>
+    <span class="dot" onclick="App.goTo(3)"></span>
+    <span class="dot" onclick="App.goTo(4)"></span>
+    <span class="dot" onclick="App.goTo(5)"></span>
+    <span class="dot" onclick="App.goTo(6)"></span>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -746,7 +746,44 @@ textarea::placeholder { color: var(--ink-muted); }
 
 /* Mobile: ≤600px */
 @media (max-width: 600px) {
-  .float-photo { display: none; }
+
+  /* ── Pull photos out of fixed positioning into a flex strip ── */
+  .float-photo {
+    position: static;
+    display: block;
+    transform: none !important;
+    animation: none !important;
+    margin: 0;
+    flex-shrink: 0;
+    border-radius: 3px;
+    /* uniform thumb size in the strip */
+    width: 90px !important;
+    height: 118px !important;
+  }
+
+  /* The strip itself — injected via a wrapper in the envelope step.
+     If your HTML already has a .photos-strip wrapper, great.
+     If not, add: <div class="photos-strip"> around all .float-photo elements. */
+  .photos-strip {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 0.6rem 1rem 0.6rem;
+    width: 100vw;
+    margin-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  .photos-strip::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+  /* Subtle fade hints at edges so user knows it's scrollable */
+  .photos-strip::before,
+  .photos-strip::after {
+    content: '';
+    flex-shrink: 0;
+    width: 6px; /* breathing room at edges */
+  }
 
   .step {
     justify-content: flex-start;
@@ -771,8 +808,8 @@ textarea::placeholder { color: var(--ink-muted); }
   .promise-item p { font-size: 0.95rem; }
   .promise-lines { gap: 1.2rem; }
 
-  /* Envelope: keep proportions, just smaller */
-  .envelope-scene { padding-top: 120px; }
+  /* Envelope: no top padding needed now — strip is above it */
+  .envelope-scene { padding-top: 0; }
 
   .envelope-wrap {
     width: 220px;
@@ -816,6 +853,11 @@ textarea::placeholder { color: var(--ink-muted); }
 /* Very small phones: ≤380px */
 @media (max-width: 380px) {
   .name-display { font-size: 2.8rem; }
+
+  .float-photo {
+    width: 75px !important;
+    height: 98px !important;
+  }
 
   .envelope-wrap {
     width: 200px;

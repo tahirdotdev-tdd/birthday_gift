@@ -111,14 +111,23 @@
   <section class="step" id="step-5">
     <div class="page-inner envelope-page">
 
-      <!-- Floating photos — LEFT side -->
-      <!-- PHOTO SLOT 1: Replace 'images/photo1.jpg' with your actual image path -->
-      <div class="float-photo fp-1">
-        <img src="photos/photo-1.png" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
-      </div>
-      <!-- PHOTO SLOT 2: Replace 'images/photo2.jpg' with your actual image path -->
-      <div class="float-photo fp-2">
-        <img src="photos/photo-2.jpg" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+      <!-- All floating photos wrapped — fixed on desktop, scrollable strip on mobile -->
+      <div class="photos-strip">
+        <div class="float-photo fp-1">
+          <img src="photos/photo-1.png" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+        </div>
+        <div class="float-photo fp-2">
+          <img src="photos/photo-2.jpg" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+        </div>
+        <div class="float-photo fp-3">
+          <img src="photos/photo-3.jpg" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+        </div>
+        <div class="float-photo fp-4">
+          <img src="photos/photo-4.png" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+        </div>
+        <div class="float-photo fp-5">
+          <img src="photos/photo-5.png" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
+        </div>
       </div>
 
       <!-- Envelope center -->
@@ -142,20 +151,6 @@
         <p class="env-hint" id="env-hint">Click the envelope to open</p>
       </div>
 
-      <!-- Floating photos — RIGHT side -->
-      <!-- PHOTO SLOT 3: Replace 'images/photo3.jpg' with your actual image path -->
-      <div class="float-photo fp-3">
-        <img src="photos/photo-3.jpg" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
-      </div>
-      <!-- PHOTO SLOT 4: Replace 'images/photo4.jpg' with your actual image path -->
-      <div class="float-photo fp-4">
-        <img src="photos/photo-4.png" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
-      </div>
-      <!-- PHOTO SLOT 5: Replace 'images/photo5.jpg' with your actual image path -->
-      <div class="float-photo fp-5">
-        <img src="photos/photo-5.png" alt="" onerror="this.parentElement.classList.add('photo-missing')" />
-      </div>
-
     </div>
     <div class="nav-row envelope-nav">
       <button class="btn-text" onclick="App.prev()">← Back</button>
@@ -163,37 +158,37 @@
     </div>
   </section>
 
-  <!-- Step 6: Her Reply — her gift back to you -->
-<section class="step" id="step-6">
-  <div class="page-inner reply-page">
-    <div class="reply-wrap">
-      <p class="reply-sub">تم بھی کچھ واپس دے سکتی ہو — ایک لفظ، ایک جملہ، یا جو بھی اس وقت دل میں ہے۔ بس طاہر ہی اسے پڑھے گا۔</p>
+  <!-- Step 6: Her Reply -->
+  <section class="step" id="step-6">
+    <div class="page-inner reply-page">
+      <div class="reply-wrap">
+        <p class="reply-sub">تم بھی کچھ واپس دے سکتی ہو — ایک لفظ، ایک جملہ، یا جو بھی اس وقت دل میں ہے۔ بس طاہر ہی اسے پڑھے گا۔</p>
 
-      <div class="reply-form" id="reply-form">
-        <textarea
-          id="reply-text"
-          placeholder="یہاں لکھو..."
-          maxlength="500"
-        ></textarea>
-        <div class="char-count"><span id="char-num">0</span> / 500</div>
+        <div class="reply-form" id="reply-form">
+          <textarea
+            id="reply-text"
+            placeholder="یہاں لکھو..."
+            maxlength="500"
+          ></textarea>
+          <div class="char-count"><span id="char-num">0</span> / 500</div>
 
-        <button class="btn-primary" id="send-btn" onclick="App.sendReply()">
-          مہر لگا کر طاہر کو بھیجو
-        </button>
+          <button class="btn-primary" id="send-btn" onclick="App.sendReply()">
+            مہر لگا کر طاہر کو بھیجو
+          </button>
+        </div>
+
+        <div class="reply-success" id="reply-success" style="display:none;">
+          <div class="success-icon">✦</div>
+          <p class="success-msg">تمہارا تحفہ محفوظ ہو گیا ہے۔</p>
+          <p class="success-sub">طاہر اسے ڈھونڈ لے گا۔</p>
+          <p class="success-urdu">جزاک اللہ</p>
+        </div>
       </div>
-
-      <div class="reply-success" id="reply-success" style="display:none;">
-        <div class="success-icon">✦</div>
-        <p class="success-msg">تمہارا تحفہ محفوظ ہو گیا ہے۔</p>
-        <p class="success-sub">طاہر اسے ڈھونڈ لے گا۔</p>
-        <p class="success-urdu">جزاک اللہ</p>
+      <div class="nav-row">
+        <button class="btn-text" onclick="App.prev()">← Back</button>
       </div>
     </div>
-    <div class="nav-row">
-      <button class="btn-text" onclick="App.prev()">← Back</button>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Progress dots -->
   <div class="progress-dots" id="progress-dots">
